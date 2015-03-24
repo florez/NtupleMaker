@@ -20,7 +20,7 @@ process.source = cms.Source("PoolSource",
     fileNames = cms.untracked.vstring(
      #'root://xrootd.unl.edu//store/mc/Phys14DR/DYToMuMu_M-50_Tune4C_13TeV-pythia8/MINIAODSIM/PU40bx25_tsg_castor_PHYS14_25_V1-v2/00000/622CAFBA-BD9A-E411-BE11-002481E14FFC.root'
       #'file:reco.root'
-      'file:0432E62A-7A6C-E411-87BB-002590DB92A8.root'
+      'file:/uscms_data/d2/florez/BSM3G_TNT_Maker/CMSSW_7_2_0/src/NtupleMaker/BSM3G_TNT_Maker/python/0432E62A-7A6C-E411-87BB-002590DB92A8.root'
     )
 )
 
@@ -66,17 +66,17 @@ process.TNT = cms.EDAnalyzer("BSM3G_TNT_Maker",
     fillMETinfo         = cms.bool(True),
     
     # input tags 
-    vertices          = cms.InputTag("offlineSlimmedPrimaryVertices"),
-    muons             = cms.InputTag("slimmedMuons"),
-    patElectrons      = cms.InputTag("slimmedElectrons"),
-    taus              = cms.InputTag("slimmedTaus"),
-    photons = cms.InputTag("slimmedPhotons"),
-    jets = cms.InputTag("slimmedJets"),
-    fatjets = cms.InputTag("slimmedJetsAK8"),
-    mets = cms.InputTag("slimmedMETs"),
-    bits = cms.InputTag("TriggerResults","","HLT"),
-    prescales = cms.InputTag("patTrigger"),
-    objects = cms.InputTag("selectedPatTrigger"),  
+    vertices            = cms.InputTag("offlineSlimmedPrimaryVertices"),
+    muons               = cms.InputTag("slimmedMuons"),
+    patElectrons        = cms.InputTag("slimmedElectrons"),
+    taus                = cms.InputTag("slimmedTaus"),
+    photons             = cms.InputTag("slimmedPhotons"),
+    jets                = cms.InputTag("slimmedJets"),
+    fatjets             = cms.InputTag("slimmedJetsAK8"),
+    mets                = cms.InputTag("slimmedMETs"),
+    bits                = cms.InputTag("TriggerResults","","HLT"),
+    prescales           = cms.InputTag("patTrigger"),
+    objects             = cms.InputTag("selectedPatTrigger"),  
     electronVetoIdMap   = cms.InputTag("egmGsfElectronIDs:cutBasedElectronID-PHYS14-PU20bx25-V1-miniAOD-standalone-veto"),
     electronLooseIdMap  = cms.InputTag("egmGsfElectronIDs:cutBasedElectronID-PHYS14-PU20bx25-V1-miniAOD-standalone-loose"),
     electronMediumIdMap = cms.InputTag("egmGsfElectronIDs:cutBasedElectronID-PHYS14-PU20bx25-V1-miniAOD-standalone-medium"),
@@ -90,8 +90,8 @@ process.TNT = cms.EDAnalyzer("BSM3G_TNT_Maker",
     Muon_vtx_position_z_max  = cms.double(24.),
 
     # electron cuts
-    patElectron_pt_min          = cms.double(10.0),
-    patElectron_eta_max         = cms.double(2.4),
+    patElectron_pt_min       = cms.double(10.0),
+    patElectron_eta_max      = cms.double(2.4),
 
     # tau cuts
     Tau_pt_min    = cms.double(20.),
