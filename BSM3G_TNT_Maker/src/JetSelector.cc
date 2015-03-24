@@ -37,20 +37,20 @@ void JetSelector::Fill(const edm::Event& iEvent){
   
   for (const pat::Jet &j : *jets) { 
     if (j.pt() < _Jet_pt_min) continue;
-    JetPt.push_back(j.pt());         
-    JetEta.push_back(j.eta());       
-    JetPhi.push_back(j.phi());       
-    JetEnergy.push_back(j.energy());
-    JetBdisc.push_back(j.bDiscriminator("combinedSecondaryVertexBJetTags"));
-    JetMass.push_back(j.mass());
-    Jetnh_e.push_back(j.neutralHadronEnergy());                               
-    Jetne_e.push_back(j.neutralEmEnergy());                                   
-    Jethe_e.push_back(j.chargedHadronEnergy());                               
-    JetcEmEnergy.push_back(j.chargedEmEnergy());                              
-    JetMuonEnergy.push_back(j.muonEnergy());                                  
-    JetEleEnergy.push_back(j.electronEnergy());                               
-    JetPhotonEnergy.push_back(j.photonEnergy());                              
-    UncorrJetPt.push_back(j.correctedJet("Uncorrected").pt());                
+    Jet_pt.push_back(j.pt());         
+    Jet_eta.push_back(j.eta());       
+    Jet_phi.push_back(j.phi());       
+    Jet_energy.push_back(j.energy());
+    Jet_bDiscriminator.push_back(j.bDiscriminator("combinedSecondaryVertexBJetTags"));
+    Jet_mass.push_back(j.mass());
+    Jet_neutralHadEnergy.push_back(j.neutralHadronEnergy());                               
+    Jet_neutralEmEmEnergy.push_back(j.neutralEmEnergy());                                   
+    Jet_chargedHadronEnergy.push_back(j.chargedHadronEnergy());                               
+    Jet_chargedEmEnergy.push_back(j.chargedEmEnergy());                              
+    Jet_muonEnergy.push_back(j.muonEnergy());                                  
+    Jet_electronEnergy.push_back(j.electronEnergy());                               
+    Jet_photonEnergy.push_back(j.photonEnergy());                              
+    UncorrJet_pt.push_back(j.correctedJet("Uncorrected").pt());                
     
   } 
   
@@ -59,39 +59,39 @@ void JetSelector::Fill(const edm::Event& iEvent){
 void JetSelector::SetBranches(){
   
   if(debug_)    std::cout<<"setting branches: calling AddBranch of baseTree"<<std::endl;
-  AddBranch(&JetPt,           "JetPt");
-  AddBranch(&JetEta,          "JetEta");
-  AddBranch(&JetPhi,          "JetPhi");
-  AddBranch(&JetEnergy,       "JetEnergy");
-  AddBranch(&JetBdisc,        "JetBdisc");
-  AddBranch(&JetMass,         "JetMass");
-  AddBranch(&Jetnh_e,         "Jetnh_e");
-  AddBranch(&Jetne_e,         "Jetne_e");
-  AddBranch(&Jethe_e,         "Jethe_e");
-  AddBranch(&JetcEmEnergy,    "JetcEmEnergy");
-  AddBranch(&JetMuonEnergy,   "JetMuonEnergy");
-  AddBranch(&JetEleEnergy,    "JetEleEnergy");
-  AddBranch(&JetPhotonEnergy, "JetPhotonEnergy");
-  AddBranch(&UncorrJetPt,     "UncorrJetPt");
+  AddBranch(&Jet_pt,                  "Jet_pt");
+  AddBranch(&Jet_eta,                 "Jet_eta");
+  AddBranch(&Jet_phi,                 "Jet_phi");
+  AddBranch(&Jet_energy,              "Jet_energy");
+  AddBranch(&Jet_bDiscriminator,      "Jet_bDiscriminator");
+  AddBranch(&Jet_mass,                "Jet_mass");
+  AddBranch(&Jet_neutralHadEnergy,    "Jet_neutralHadEnergy");
+  AddBranch(&Jet_neutralEmEmEnergy,   "Jet_neutralEmEmEnergy");
+  AddBranch(&Jet_chargedHadronEnergy, "Jet_chargedHadronEnergy");
+  AddBranch(&Jet_chargedEmEnergy,     "Jet_chargedEmEnergy");
+  AddBranch(&Jet_muonEnergy,          "Jet_muonEnergy");
+  AddBranch(&Jet_electronEnergy,      "Jet_electronEnergy");
+  AddBranch(&Jet_photonEnergy,        "Jet_photonEnergy");
+  AddBranch(&UncorrJet_pt,            "UncorrJet_pt");
   
   if(debug_)    std::cout<<"set branches"<<std::endl;
 }
 
 void JetSelector::Clear(){
   
-  JetPt.clear();
-  JetEta.clear();
-  JetPhi.clear();
-  JetEnergy.clear();
-  JetBdisc.clear();
-  JetMass.clear();
-  Jetnh_e.clear();
-  Jetne_e.clear();
-  Jethe_e.clear();
-  JetcEmEnergy.clear();
-  JetMuonEnergy.clear();
-  JetEleEnergy.clear();
-  JetPhotonEnergy.clear();
-  UncorrJetPt.clear();
+  Jet_pt.clear();
+  Jet_eta.clear();
+  Jet_phi.clear();
+  Jet_energy.clear();
+  Jet_bDiscriminator.clear();
+  Jet_mass.clear();
+  Jet_neutralHadEnergy.clear();
+  Jet_neutralEmEmEnergy.clear();
+  Jet_chargedHadronEnergy.clear();
+  Jet_chargedEmEnergy.clear();
+  Jet_muonEnergy.clear();
+  Jet_electronEnergy.clear();
+  Jet_photonEnergy.clear();
+  UncorrJet_pt.clear();
   
 }

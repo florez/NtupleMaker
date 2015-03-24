@@ -81,9 +81,10 @@ public:
  private:
   JetSelector(){};
   
-  vector <double> JetPt, JetEta, JetPhi,JetEnergy,  JetBdisc,  JetMass, JetParton, JetjetId;
-  vector <double> JetIDPU, Jetpass_pileupJetId, Jetnh_e, Jetne_e, Jethe_e, JetcEmEnergy, JetMuonEnergy; 
-  vector <double> JetEleEnergy,JetPhotonEnergy, UncorrJetPt; 
+  vector <double> Jet_pt, Jet_eta, Jet_phi,Jet_energy,  Jet_bDiscriminator,  JetMass, JetParton, JetjetId;
+  vector <double> JetIDPU, Jetpass_pileupJetId, Jet_neutralHadEnergy, Jet_neutralEmEmEnergy; 
+  vector <double> Jet_chargedHadronEnergy, Jet_chargedEmEnergy, Jet_muonEnergy; 
+  vector <double> Jet_electronEnergy,Jet_photonEnergy, UncorrJet_pt; 
   double  sumpxForMht;     
   double  sumpyForMht;
   double  sumptForHt ;
