@@ -21,15 +21,15 @@ void METSelector::Fill(const edm::Event& iEvent){
   iEvent.getByLabel(metToken_, mets);
   const pat::MET &met = mets->front();
   
-  MetPt = met.pt();
-  MetPx = met.px();
-  MetPy = met.py();
-  MetPz = met.pz();
-  MetPhi = met.phi();
-  MetSumEt = met.sumEt();
-  genMet = met.genMET()->pt();
-  MetShiftedPtUp = met.shiftedPt(pat::MET::JetEnUp);
-  MetShiftedPtDown  = met.shiftedPt(pat::MET::JetEnDown);
+  Met_pt = met.pt();
+  Met_px = met.px();
+  Met_py = met.py();
+  Met_pz = met.pz();
+  Met_phi = met.phi();
+  Met_sumEt = met.sumEt();
+  Gen_Met = met.genMET()->pt();
+  Met_shiftedPtUp = met.shiftedPt(pat::MET::JetEnUp);
+  Met_shiftedPtDown  = met.shiftedPt(pat::MET::JetEnDown);
   
   if(debug_)    std::cout<<"got MET info"<<std::endl;
 }
@@ -37,29 +37,29 @@ void METSelector::Fill(const edm::Event& iEvent){
 void METSelector::SetBranches(){
   if(debug_)    std::cout<<"setting branches: calling AddBranch of baseTree"<<std::endl;
   
-  AddBranch(&MetPt,    "MetPt");
-  AddBranch(&MetPx,    "MetPx");
-  AddBranch(&MetPy,    "MetPy");
-  AddBranch(&MetPz,    "MetPz");
-  AddBranch(&MetPhi,  "MetPhi");
-  AddBranch(&MetSumEt, "MetSumEt");
-  AddBranch(&genMet,   "genMet");
-  AddBranch(&MetShiftedPtUp, "MetShiftedPtUp");
-  AddBranch(&MetShiftedPtDown, "MetShiftedPtDown");
+  AddBranch(&Met_pt,            "Met_pt");
+  AddBranch(&Met_px,            "Met_px");
+  AddBranch(&Met_py,            "Met_py");
+  AddBranch(&Met_pz,            "Met_pz");
+  AddBranch(&Met_phi,           "Met_phi");
+  AddBranch(&Met_sumEt,         "Met_sumEt");
+  AddBranch(&Gen_Met,           "Gen_Met");
+  AddBranch(&Met_shiftedPtUp,   "Met_shiftedPtUp");
+  AddBranch(&Met_shiftedPtDown, "Met_shiftedPtDown");
   
   if(debug_)    std::cout<<"set branches"<<std::endl;
 }
 
 
 void METSelector::Clear(){
-  MetPt = -9999999999;                                                                                                                                    
-  MetPx = -9999999999;
-  MetPy = -9999999999;
-  MetPz = -9999999999;
-  MetPhi  = -9999999999;
-  MetSumEt  = -9999999999 ;
-  genMet  = -9999999999;
-  MetShiftedPtUp  = -9999999999;
-  MetShiftedPtDown   = -9999999999;
+  Met_pt = -9999999999;                                                                                                                                    
+  Met_px = -9999999999;
+  Met_py = -9999999999;
+  Met_pz = -9999999999;
+  Met_phi  = -9999999999;
+  Met_sumEt  = -9999999999 ;
+  Gen_Met  = -9999999999;
+  Met_shiftedPtUp  = -9999999999;
+  Met_shiftedPtDown   = -9999999999;
   
 }

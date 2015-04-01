@@ -1,3 +1,8 @@
+// 
+//  Authors:  Andres Florez: Universidad de los Andes, Colombia. 
+//  kaur amandeepkalsi: Panjab University, India. 
+//
+
 #ifndef __TAU_MU_H_                                                                                                                                  
 #define __TAU_MU_H_
 
@@ -82,7 +87,7 @@ private:
   TauSelector(){};
   
   vector <double> Tau_eta, Tau_phi, Tau_pt, Tau_energy, Tau_charge, Tau_chargedIsoPtSum, Tau_neutralIsoPtSum, Tau_puCorrPtSum ;
-  vector<double>  TauLeadChargedCandPt, TauLeadChargedCandCharge, TauLeadChargedCandEta, TauLeadChargedCandPhi,TauNProngs;
+  vector<double>  Tau_leadChargedCandPt, Tau_leadChargedCandCharge, Tau_leadChargedCandEta, Tau_leadChargedCandPhi,Tau_nProngs;
   
   vector <int> Tau_decayModeFinding, Tau_decayModeFindingOldDMs, Tau_decayModeFindingNewDMs; 
   vector <int> Tau_byLooseCombinedIsolationDeltaBetaCorr,Tau_byLooseCombinedIsolationDeltaBetaCorr3Hits;

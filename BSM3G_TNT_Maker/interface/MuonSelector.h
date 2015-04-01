@@ -1,3 +1,8 @@
+// 
+//  Authors:  Andres Florez: Universidad de los Andes, Colombia. 
+//  kaur amandeepkalsi: Panjab University, India. 
+// 
+
 #ifndef __MUON_MU_H_                                                                                                                                  
 #define __MUON_MU_H_
 
@@ -79,12 +84,12 @@ private:
   
   // ----------member data ---------------------------
 
-  vector <double> MuonRel , MuonIsoCharParPt ;
-  vector <double> MuonPt ,MuonEta,MuonPhi,MuonDZ, MuonEnergy,MuonIso;
-  vector <double> MuonIsoCharged, MuonIsoNeutralHadron , MuonIsoPhoton, MuonIsoPU;
-  vector <double> MuonCharge, MuonChi2, MuonP, MuonMatchedStat,MuonDXY, MuonValidHits, MuonValidHitsInner, MuonTLayers; 
+  vector <double> Muon_isoSum , Muon_isoCharParPt ;
+  vector <double> Muon_pt ,Muon_eta,Muon_phi, Muon_dz, Muon_energy, Muon_iso;
+  vector <double> Muon_isoCharged, Muon_isoNeutralHadron , Muon_isoPhoton, Muon_isoPU;
+  vector <double> Muon_charge, Muon_chi2, Muon_p, Muon_matchedStat, Muon_dxy, Muon_validHits, Muon_validHitsInner, Muon_TLayers; 
   
-  vector <bool> MuonTight, MuonSoft, MuonPF ;   
+  vector <bool> Muon_tight, Muon_soft, Muon_pf ;   
 
   // confit variables
   edm::InputTag _muonToken;

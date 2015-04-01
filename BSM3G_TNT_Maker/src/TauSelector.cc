@@ -64,12 +64,12 @@ void TauSelector::Fill(const edm::Event& iEvent){
     Tau_againstElectronMVATightMVA5.push_back( tau.tauID("againstElectronTightMVA5"));
     
     const reco::CandidatePtr hadTauLeadChargedCand = tau.leadChargedHadrCand();                                                                   
-    TauLeadChargedCandPt.push_back(hadTauLeadChargedCand.isNonnull() ? hadTauLeadChargedCand->pt() : -1.);      
-    TauLeadChargedCandCharge.push_back(hadTauLeadChargedCand.isNonnull() ? hadTauLeadChargedCand->charge() : -2);   
-    TauLeadChargedCandEta.push_back(hadTauLeadChargedCand.isNonnull() ? hadTauLeadChargedCand->eta() : -999);
-    TauLeadChargedCandPhi.push_back(hadTauLeadChargedCand.isNonnull() ? hadTauLeadChargedCand->phi() : -999);
+    Tau_leadChargedCandPt.push_back(hadTauLeadChargedCand.isNonnull() ? hadTauLeadChargedCand->pt() : -1.);      
+    Tau_leadChargedCandCharge.push_back(hadTauLeadChargedCand.isNonnull() ? hadTauLeadChargedCand->charge() : -2);   
+    Tau_leadChargedCandEta.push_back(hadTauLeadChargedCand.isNonnull() ? hadTauLeadChargedCand->eta() : -999);
+    Tau_leadChargedCandPhi.push_back(hadTauLeadChargedCand.isNonnull() ? hadTauLeadChargedCand->phi() : -999);
     
-    TauNProngs.push_back(tau.signalChargedHadrCands().size());
+    Tau_nProngs.push_back(tau.signalChargedHadrCands().size());
     taucoun++;
   }
   
@@ -117,11 +117,11 @@ void TauSelector::SetBranches(){
   AddBranch(&Tau_againstElectronMVAMediumMVA5,                  "Tau_againstElectronMVAMediumMVA5");
   AddBranch(&Tau_againstElectronMVATightMVA5,                   "Tau_againstElectronMVATightMVA5");
   AddBranch(&Tau_byVLooseCombinedIsolationDeltaBetaCorr,        "Tau_byVLooseCombinedIsolationDeltaBetaCorr");
-  AddBranch(&TauLeadChargedCandPt,                              "TauLeadChargedCandPt");
-  AddBranch(&TauLeadChargedCandCharge,                          "TauLeadChargedCandCharge");
-  AddBranch(&TauLeadChargedCandEta,                             "TauLeadChargedCandEta");
-  AddBranch(&TauLeadChargedCandPhi,                             "TauLeadChargedCandPhi");
-  AddBranch(&TauNProngs,                                        "TauNProngs");
+  AddBranch(&Tau_leadChargedCandPt,                              "Tau_leadChargedCandPt");
+  AddBranch(&Tau_leadChargedCandCharge,                          "Tau_leadChargedCandCharge");
+  AddBranch(&Tau_leadChargedCandEta,                             "Tau_leadChargedCandEta");
+  AddBranch(&Tau_leadChargedCandPhi,                             "Tau_leadChargedCandPhi");
+  AddBranch(&Tau_nProngs,                                        "Tau_nProngs");
   
   
 }
@@ -165,11 +165,9 @@ void TauSelector::Clear(){
   Tau_againstElectronMVAMediumMVA5.clear();
   Tau_againstElectronMVATightMVA5.clear();
   Tau_byVLooseCombinedIsolationDeltaBetaCorr.clear();
-  
-  TauLeadChargedCandPt.clear();
-  TauLeadChargedCandCharge.clear();
-  TauLeadChargedCandEta.clear();
-  TauLeadChargedCandPhi.clear();
-  
-  TauNProngs.clear();
+  Tau_leadChargedCandPt.clear();
+  Tau_leadChargedCandCharge.clear();
+  Tau_leadChargedCandEta.clear();
+  Tau_leadChargedCandPhi.clear();
+  Tau_nProngs.clear();
 }

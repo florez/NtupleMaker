@@ -1,3 +1,8 @@
+// 
+//  Authors:  Andres Florez: Universidad de los Andes, Colombia. 
+//  kaur amandeepkalsi: Panjab University, India. 
+// 
+
 #ifndef __GEN_PAR_H_ 
 
 #define __GEN_PAR_H_
@@ -109,12 +114,12 @@ class GenParticleSelector : public baseTree{
 
 
  //variables which would become branches
- vector <double> genParticlept,genParticleeta,genParticlephi,genParticlestatus,genParticlepdg_id,genParticlemotherpdg_id; 
- vector <double> genParticlep, genParticleenergy, genParticlevx, genParticlevy, genParticlevz; 
- vector <double> genParticlecharge, genParticlenumDaught, genParticlenumMother;
- vector <int> genParticleBmotherIndices, genParticleBdaughtIndices;
+ vector <double> Gen_pt, Gen_eta, Gen_phi, Gen_status, Gen_pdg_id, Gen_motherpdg_id;
+ vector <double> Gen_p, Gen_energy, Gen_vx, Gen_vy, Gen_vz; 
+ vector <double> Gen_charge, Gen_numDaught, Gen_numMother;
+ vector <int> Gen_BmotherIndices, Gen_BdaughtIndices;
 
- int genParticleBmotherIndex;
+ int Gen_BmotherIndex;
 };
 
 #endif

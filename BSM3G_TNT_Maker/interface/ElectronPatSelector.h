@@ -1,5 +1,10 @@
+// 
+// Authors:  Andres Florez: Universidad de los Andes, Colombia. 
+// kaur amandeepkalsi: Panjab University, India. 
+//
 #ifndef __ELECTRON_PAT_H_                                                                                                                                  
 #define __ELECTRON_PAT_H_
+
 
 #include <memory>
 #include <iostream>
@@ -72,9 +77,9 @@ public:
   edm::EDGetTokenT<edm::ValueMap<bool> > electronTightIdMapToken_;
   // ----------member data ---------------------------
   
-  vector <Float_t> patElectronPt , patElectronEta, patElectronPhi, patElectronEnergy, patElectronCharge;
-  vector <Float_t> patElectron_d0, patElectron_dz, isoChargedHadrons_, isoNeutralHadrons_, isoPhotons_;
-  vector<Int_t> passVetoId_, passLooseId_, passMediumId_, passTightId_, passConversionVeto_, expectedMissingInnerHits;
+  vector<double> patElectron_pt , patElectron_eta, patElectron_phi, patElectron_energy, patElectron_charge;
+  vector<double> patElectron_d0, patElectron_dz, isoChargedHadrons_, isoNeutralHadrons_, isoPhotons_;
+  vector<int> passVetoId_, passLooseId_, passMediumId_, passTightId_, passConversionVeto_, expectedMissingInnerHits;
   
   // confit variables
   edm::InputTag _patElectronToken;

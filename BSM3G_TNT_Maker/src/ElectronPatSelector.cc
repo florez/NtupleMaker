@@ -46,11 +46,11 @@ void ElectronPatSelector::Fill(const edm::Event& iEvent){
     if (el->pt() < _patElectron_pt_min) continue;
     if (fabs(el->eta()) > _patElectron_eta_max) continue;  
     
-    patElectronPt.push_back(el->pt());
-    patElectronEta.push_back(el->eta());
-    patElectronPhi.push_back(el->phi());
-    patElectronCharge.push_back(el->charge());
-    patElectronEnergy.push_back(el->energy());
+    patElectron_pt.push_back(el->pt());
+    patElectron_eta.push_back(el->eta());
+    patElectron_phi.push_back(el->phi());
+    patElectron_charge.push_back(el->charge());
+    patElectron_energy.push_back(el->energy());
     
     // Look up the ID decision for this electron in
     // the ValueMap object and store it. We need a Ptr object as the key.
@@ -85,11 +85,11 @@ void ElectronPatSelector::Fill(const edm::Event& iEvent){
 void ElectronPatSelector::SetBranches(){
   if(debug_)    std::cout<<"setting branches: calling AddBranch of baseTree"<<std::endl;
   
-  AddBranch(&patElectronPt            ,"patElectronPt");
-  AddBranch(&patElectronEta           ,"patElectronEta");
-  AddBranch(&patElectronPhi           ,"patElectronPhi");
-  AddBranch(&patElectronEnergy        ,"patElectronEnergy");
-  AddBranch(&patElectronCharge        ,"patElectronCharge");
+  AddBranch(&patElectron_pt           ,"patElectron_pt");
+  AddBranch(&patElectron_eta          ,"patElectron_eta");
+  AddBranch(&patElectron_phi          ,"patElectron_phi");
+  AddBranch(&patElectron_energy       ,"patElectron_energy");
+  AddBranch(&patElectron_charge       ,"patElectron_charge");
   AddBranch(&passVetoId_              ,"patElectron_isPassVeto");          
   AddBranch(&passLooseId_             ,"patElectron_isPassLoose");
   AddBranch(&passMediumId_            ,"patElectron_isPassMedium");
@@ -107,11 +107,11 @@ void ElectronPatSelector::SetBranches(){
 
 void ElectronPatSelector::Clear(){
   
-  patElectronPt.clear();
-  patElectronEta.clear();
-  patElectronPhi.clear();
-  patElectronEnergy.clear();
-  patElectronCharge.clear(); 
+  patElectron_pt.clear();
+  patElectron_eta.clear();
+  patElectron_phi.clear();
+  patElectron_energy.clear();
+  patElectron_charge.clear(); 
   passVetoId_.clear();
   passLooseId_.clear();
   passMediumId_.clear();

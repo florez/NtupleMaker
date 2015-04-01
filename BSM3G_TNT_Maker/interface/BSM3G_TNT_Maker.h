@@ -4,7 +4,8 @@
 // Class:      BSM3G_TNT_Maker
 // 
 //
-// Authors:  Andres Florez, kaur amandeepkalsi
+// Authors:  Andres Florez: Universidad de los Andes, Colombia. 
+// kaur amandeepkalsi: Panjab University, India. 
 //
 
 #ifndef  TREE_MAKER_H                                                                                                                                    
