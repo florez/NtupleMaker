@@ -61,7 +61,7 @@ process.TNT = cms.EDAnalyzer("BSM3G_TNT_Maker",
     fillelectronpatinfo = cms.bool(True),
     filltauinfo         = cms.bool(True),
     fillgeninfo         = cms.bool(True),
-    fillPVinfo          = cms.bool(False),
+    fillPVinfo          = cms.bool(True),
     filljetinfo         = cms.bool(True),
     fillMETinfo         = cms.bool(True),
     
