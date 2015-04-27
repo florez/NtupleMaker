@@ -16,9 +16,9 @@ BSM3G_TNT_Maker::BSM3G_TNT_Maker(const edm::ParameterSet& iConfig):
   _fillgeninfo             = iConfig.getParameter<bool>("fillgeninfo"); 
   _fillPVinfo              = iConfig.getParameter<bool>("fillPVinfo"); 
   _fillMETinfo             = iConfig.getParameter<bool>("fillMETinfo");
+  _fillphotoninfo          = iConfig.getParameter<bool>("fillphotoninfo");
   edm::Service<TFileService> fs;
   tree_ = fs->make<TTree>("BOOM","BOOM");
-  
   
   if( _fillmuoninfo)         muselector     = new MuonSelector("miniAOD", tree_, debug_, iConfig);
   if( _fillelectronpatinfo)  elpatselector  = new ElectronPatSelector("miniAOD", tree_, debug_, iConfig, consumesCollector());
@@ -27,7 +27,7 @@ BSM3G_TNT_Maker::BSM3G_TNT_Maker(const edm::ParameterSet& iConfig):
   if( _fillgeninfo)          genselector    = new GenParticleSelector("miniAOD", tree_, debug_, iConfig);
   if( _fillPVinfo)           pvselector     = new PVSelector("miniAOD", tree_, debug_, iConfig);
   if( _fillMETinfo)          metselector    = new METSelector("miniAOD", tree_, debug_, iConfig);
-  
+  if(_fillphotoninfo)        photonselector = new PhotonSelector("miniAOD", tree_, debug_, iConfig);  
 }
 
 
@@ -60,7 +60,7 @@ BSM3G_TNT_Maker::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup
   if( _fillgeninfo)          genselector->Fill(iEvent); 
   if( _fillPVinfo)           pvselector->Fill(iEvent);
   if( _fillMETinfo)          metselector->Fill(iEvent);
-  
+  if( _fillphotoninfo)       photonselector->Fill(iEvent); 
   tree_->Fill();
 #ifdef THIS_IS_AN_EVENT_EXAMPLE
   Handle<ExampleData> pIn;

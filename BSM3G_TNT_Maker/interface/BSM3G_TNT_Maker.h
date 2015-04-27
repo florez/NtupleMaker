@@ -25,6 +25,8 @@
 #include "NtupleMaker/BSM3G_TNT_Maker/interface/PVSelector.h"
 #include "NtupleMaker/BSM3G_TNT_Maker/interface/GenParticleSelector.h"
 #include "NtupleMaker/BSM3G_TNT_Maker/interface/METSelector.h"
+#include "NtupleMaker/BSM3G_TNT_Maker/interface/PhotonSelector.h"
+
 
 #ifdef __MAKECINT__
 #pragma link C++ class std::vector<std::vector<int> >+;
@@ -67,7 +69,7 @@ private:
   bool _fillgeninfo;
   bool _fillPVinfo;
   bool _fillMETinfo;
-
+  bool _fillphotoninfo;
   
   MuonSelector        *muselector;
   ElectronPatSelector *elpatselector;
@@ -76,6 +78,7 @@ private:
   GenParticleSelector *genselector;
   PVSelector          *pvselector;
   METSelector         *metselector;
+  PhotonSelector      *photonselector;
 };
 
 #endif 
