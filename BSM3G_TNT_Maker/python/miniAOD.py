@@ -64,6 +64,7 @@ process.TNT = cms.EDAnalyzer("BSM3G_TNT_Maker",
     fillPVinfo          = cms.bool(True),
     filljetinfo         = cms.bool(True),
     fillMETinfo         = cms.bool(True),
+    fillphotoninfo      = cms.bool(True),
     
     # input tags 
     vertices            = cms.InputTag("offlineSlimmedPrimaryVertices"),
@@ -99,6 +100,10 @@ process.TNT = cms.EDAnalyzer("BSM3G_TNT_Maker",
 
     # jet cuts
     Jet_pt_min    = cms.double(20.),
+
+    # photon cuts 
+    Photon_pt_min   = cms.double(5.0),
+    Photon_eta_max  = cms.double(5.0),
 
     # primary vertex cuts
     Pvtx_ndof_min   = cms.double(4.),
